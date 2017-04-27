@@ -11,20 +11,22 @@
         android:id="@+id/nome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:orientation="horizontal"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp">
+        tools:layout_constraintRight_creator="1">
 
         <ImageView
             android:id="@+id/foto"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginLeft="8dp"/>
+            android:src="@drawable/piatto" />
 
         <TextView
             android:id="@+id/nome"
@@ -38,37 +40,63 @@
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/nome"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp">
+        app:layout_constraintTop_toBottomOf="@+id/nome">
 
         <TextView
             android:id="@+id/ingredienti"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
             android:layout_weight="0"
-            android:text="Ingredienti"
-            android:textSize="25dp"/>
+            android:text="Ingredienti: lista ingredienti"
+            android:textSize="23dp" />
 
         <TextView
             android:id="@+id/descrizione"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:layout_weight="0"
-            android:text="Descrizione"
-            android:textSize="25dp"/>
+            android:text="Descrizione:"
+            android:textSize="23dp" />
 
-        <RatingBar
-            android:id="@+id/valutazione"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="Valutazione:"
+                android:textSize="23dp"
+                android:layout_marginRight="8dp"/>
+
+            <RatingBar
+                android:id="@+id/valutazione"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:stepSize="1"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
 
         <EditText
             android:id="@+id/commento"
@@ -78,8 +106,17 @@
             android:gravity="top"
             android:text="Commento" />
 
+        <Button
+            android:id="@+id/send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="Invia"
+            android:textSize="20dp" />
+
     </LinearLayout>
 
+</LinearLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
